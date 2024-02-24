@@ -4,6 +4,7 @@ use App\Http\Controllers\{
     AuthController,
     ManajemenMobilController,
     PeminjamanMobilController,
+    PengembalianMobilController,
     ProfileController,
     SewaMobilController
 };
@@ -44,5 +45,16 @@ Route::group(['middleware' => ['auth']], function () {
     Route::controller(PeminjamanMobilController::class)->group(function () {
         Route::get('peminjaman-mobil', 'index')->name('peminjaman');
         Route::get('peminjaman-mobil/form-peminjaman', 'formPeminjaman')->name('peminjaman.formPeminjaman');
+        Route::post('peminjaman-mobil/add', 'add')->name('peminjaman.add');
+        
+        // Ajax
+        Route::get('peminjaman-mobil/cek-status-mobil', 'cekStatusMobil')->name('peminjaman.ajax.cekStatusMobil');
+    });
+    Route::controller(PengembalianMobilController::class)->group(function () {
+        Route::get('pengembalian-mobil', 'index')->name('pengembalian');
+        Route::get('pengembalian-mobil/form-pengembalian', 'formPengembalian')->name('pengembalian.formPengembalian');
+        Route::post('pengembalian-mobil/add', 'add')->name('pengembalian.add');
+
+        Route::get('pengembaluan-mobil/cari-data', 'cariData')->name('pengembalian.ajax.cariData');
     });
 });

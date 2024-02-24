@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="dashboard.html" class="nav-link">
+                <a href="{{ route('pengembalian') }}" class="nav-link">
                     <i class="link-icon" data-feather="box"></i>
                     <span class="link-title">Pengembalian Mobil</span>
                 </a>
