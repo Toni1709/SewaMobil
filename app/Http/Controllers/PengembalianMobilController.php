@@ -28,6 +28,8 @@ class PengembalianMobilController extends Controller
             'tanggal' => date('Y-m-d'),
             'pengguna_id' => Auth::user()->id,
             'mobil_id' => $request->mobil_id,
+            'tgl_mulai_sewa' => $request->tgl_mulai,
+            'tgl_selesai_sewa' => $request->tgl_selesai,
             'total_harga' => $request->total_harga,
             'lama_sewa' => $request->lama_sewa,
         ]);

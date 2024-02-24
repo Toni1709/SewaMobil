@@ -11,6 +11,8 @@ class PengembalianMobil extends Model
     protected $table = 'pengembalian_mobils';
     protected $fillable = [
         'tanggal',
+        'tgl_mulai_sewa',
+        'tgl_selesai_sewa',
         'pengguna_id',
         'mobil_id',
         'lama_sewa',

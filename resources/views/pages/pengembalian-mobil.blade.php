@@ -13,7 +13,8 @@
             <div class="col-12 col-md-12">
                 <div class="d-flex align-items-center flex-wrap text-nowrap">
 
-                    <a href="{{ route('pengembalian.formPengembalian') }}" class="btn btn-primary btn-icon-text mb-2 mb-md-0">
+                    <a href="{{ route('pengembalian.formPengembalian') }}"
+                        class="btn btn-primary btn-icon-text mb-2 mb-md-0">
                         <i class="btn-icon-prepend" data-feather="user-plus"></i>
                         Add New
                     </a>
@@ -30,19 +31,26 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
+                                    <th>Tanggal Dikembalikan</th>
                                     <th>Tanggal Mulai Sewa</th>
                                     <th>Tanggal Selesai Sewa</th>
-                                    <th>Mobil</th>                                                                   
-                                    <th>No. Plat Mobil</th>   
-                                    <th>Jumlah Hari</th>                                                                
-                                    <th>Total Sewa</th>                                                                
+                                    <th>Mobil</th>
+                                    <th>No. Plat Mobil</th>
+                                    <th>Jumlah Hari</th>
+                                    <th>Total Sewa</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($pengembalian as $no => $p)
                                     <tr>
-                                        <td>{{ $no+1 }}</td>
-                                        <td>{{ $p-> }}</td>
+                                        <td>{{ $no + 1 }}</td>
+                                        <td>{{ $p->tanggal }}</td>
+                                        <td>{{ $p->tgl_mulai_sewa }}</td>
+                                        <td>{{ $p->tgl_selesai_sewa }}</td>
+                                        <td>{{ $p->mobil->merek }} {{ $p->mobil->model }}</td>
+                                        <td>{{ $p->mobil->no_plat }}</td>
+                                        <td>{{ $p->lama_sewa }}</td>
+                                        <td>Rp {{ number_format($p->total_harga, 0, ',', '.') }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

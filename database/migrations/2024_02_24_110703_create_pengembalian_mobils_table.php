@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('pengembalian_mobils', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal');
+            $table->date('tgl_mulai_sewa');
+            $table->date('tgl_selesai_sewa');
             $table->integer('pengguna_id');
             $table->integer('mobil_id');
             $table->integer('lama_sewa');

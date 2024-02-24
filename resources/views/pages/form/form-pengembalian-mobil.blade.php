@@ -94,6 +94,8 @@
                                             <input type="hidden" name="mobil_id" id="mobil_id">
                                             <input type="hidden" name="total_harga" id="total_harga">
                                             <input type="hidden" name="lama_sewa" id="lama_sewa">
+                                            <input type="hidden" name="tgl_mulai" id="tgl_mulai">
+                                            <input type="hidden" name="tgl_selesai" id="tgl_selesai">
                                             <div class="col-md-4 col-12 mt-3">
                                                 <button type="submit"
                                                     class="btn btn-primary form-control">Kembalikan</button>
@@ -135,6 +137,8 @@
 
                         $('#mobil_id').val(data.mobil.id);
                         $('#lama_sewa').val(data.lamaSewa);
+                        $('#tgl_mulai').val(data.peminjaman.tgl_mulai_sewa);
+                        $('#tgl_selesai').val(data.peminjaman.tgl_selesai_sewa);
                         $('#total_harga').val((data.lamaSewa) * (data.mobil.tarif));
                     }
                 });
